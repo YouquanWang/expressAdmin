@@ -89,4 +89,28 @@ router.post('/info', async (req, res, next) => {
   }
 })
 
+router.post('/edit', async (req, res, next) => {
+  let { id,title,pic,catid,recommend,istop,status,groupImg,attr,content } = req.body
+  let time = tools.formatDateTime(new Date());
+  istop = istop?1:0;
+  status = status?1:0;
+  recommend = recommend?1:0;
+  let sql = 'update product set title=?, pic=?, groupImg=?,spec=?, price=?, recommend=?, istop=?, status=?, time=?, content=?, catid=? where id=?';
+  let sql = 'insert into product (title,pic,recommend,istop,status,time,author,visits,content,catid,attr,groupImg) values (?,?,?,?,?,?,?,?,?,?,?,?)';
+    const result = await DB.query(sql, [title,pic,recommend,istop,status,time,author,visits,content,catid,attr,groupImg]);
+    if(result){
+      res.json({
+        status: 1,
+        data: [],
+        msg: '添加成功'
+      })
+    } else {
+      res.json({
+        status: 0,
+        data: [],
+        msg: '添加失败'
+      })
+    }
+})
+
 module.exports = router
