@@ -10,9 +10,6 @@ const upload = require('../model/upload')
 const app = express();
 app.locals.__HOST__ = 'http://localhost:3000';
 router.all('*',function (req,res,next){
-    // let path = url.parse(req.request.url).pathname.substring(1);
-    // console.log(path)
-    // console.log(req.path)
     if(req.path !== '/login' && !req.session.isLogin)
     {
         res.json({
@@ -22,16 +19,6 @@ router.all('*',function (req,res,next){
             url: '/login'
         })
     }
-    console.log(req.session)
-    // if (ctx.session.userinfo) {
-    //     await next()
-    // } else {
-    //     if (path == 'admin/login' || path == 'admin/login/doLogin' || path == 'admin/login/captcha') {
-    //         await next()
-    //     } else {
-    //        await ctx.redirect('admin/login')
-    //     }
-    // }
     next();
 })
 router.use('/product', product)
@@ -65,8 +52,14 @@ router.post('/upload', upload.single('file'),(req,res,next) =>{
     msg: '上传成功',
     url: '',
     imgUrl: app.locals.__HOST__ + path.substring(6)
+  })
 })
-})
+router.post('/userInfo', (req,res,next) =>{
+    res.json({
+      status: 1,
+      data: req.session.userInfo
+    })
+  })
 router.use('/login', loginRouter)
 
 module.exports = router;

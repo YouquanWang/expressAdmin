@@ -9,14 +9,12 @@ router.post('/list', async (req, res, next) => {
   if (total.length>0) {
     let sql = 'select * from product order by id DESC limit ?,?';
     const result = await DB.query(sql, [(page - 1) * limit, limit]);
-    if(result.length>0) {
-      res.json({
-        status: 1,
-        data: result,
-        msg: '',
-        total: total.length
-      })
-    }
+    res.json({
+      status: 1,
+      data: result,
+      msg: '',
+      total: total.length
+    })
   } else {
     res.json({
       status: 1,
@@ -90,11 +88,12 @@ router.post('/info', async (req, res, next) => {
 
 router.post('/edit', async (req, res, next) => {
   let { id,title,pic,catid,recommend,istop,status,groupImg,attr,content } = req.body
+
   let time = tools.formatDateTime(new Date());
   istop = istop?1:0;
   status = status?1:0;
   recommend = recommend?1:0;
-  let sql = 'update product set title=?,pic=?,recommend=?,istop=?,status=?,time=?,content=?,catid=?,attr=?,groupImg=?';
+  let sql = 'update product set title=?,pic=?,recommend=?,istop=?,status=?,time=?,content=?,catid=?,attr=?,groupImg=? where id=?';
     const result = await DB.query(sql, [title,pic,recommend,istop,status,time,content,catid,attr,groupImg,id]);
     if(result){
       res.json({
