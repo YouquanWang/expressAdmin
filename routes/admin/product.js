@@ -25,15 +25,15 @@ router.post('/list', async (req, res, next) => {
   }
 })
 router.post('/add', async (req, res, next) => {
-  let {title,pic,catid,recommend,istop,status,groupImg,attr,content } = req.body
+  let {title,pic,price,catid,recommend,istop,status,groupImg,attr,content } = req.body
   let time = tools.formatDateTime(new Date());
   istop = istop?1:0;
   status = status?1:0;
   recommend = recommend?1:0;
   let visits = 0
   let author = 'admin';
-  let sql = 'insert into product (title,pic,recommend,istop,status,time,author,visits,content,catid,attr,groupImg) values (?,?,?,?,?,?,?,?,?,?,?,?)';
-    const result = await DB.query(sql, [title,pic,recommend,istop,status,time,author,visits,content,catid,attr,groupImg]);
+  let sql = 'insert into product (title,pic,price,recommend,istop,status,time,author,visits,content,catid,attr,groupImg) values (?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    const result = await DB.query(sql, [title,pic,price,recommend,istop,status,time,author,visits,content,catid,attr,groupImg]);
     if(result){
       res.json({
         status: 1,
@@ -87,14 +87,14 @@ router.post('/info', async (req, res, next) => {
 })
 
 router.post('/edit', async (req, res, next) => {
-  let { id,title,pic,catid,recommend,istop,status,groupImg,attr,content } = req.body
+  let { id,title,pic,price,catid,recommend,istop,status,groupImg,attr,content } = req.body
 
   let time = tools.formatDateTime(new Date());
   istop = istop?1:0;
   status = status?1:0;
   recommend = recommend?1:0;
-  let sql = 'update product set title=?,pic=?,recommend=?,istop=?,status=?,time=?,content=?,catid=?,attr=?,groupImg=? where id=?';
-    const result = await DB.query(sql, [title,pic,recommend,istop,status,time,content,catid,attr,groupImg,id]);
+  let sql = 'update product set title=?,pic=?,price=?,recommend=?,istop=?,status=?,time=?,content=?,catid=?,attr=?,groupImg=? where id=?';
+    const result = await DB.query(sql, [title,pic,price,recommend,istop,status,time,content,catid,attr,groupImg,id]);
     if(result){
       res.json({
         status: 1,

@@ -8,7 +8,7 @@ const attribute= require('./admin/attribute')
 const DB = require('../model/mysqlDB');
 const upload = require('../model/upload')
 const app = express();
-app.locals.__HOST__ = 'http://localhost:3000';
+app.locals.__HOST__ = 'http://localhost:4000';
 router.all('*',function (req,res,next){
     if(req.path !== '/login' && !req.session.isLogin)
     {
