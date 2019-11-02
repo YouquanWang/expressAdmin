@@ -31,7 +31,7 @@ router.post('/list', async (req, res, next) => {
     if(result){
       res.json({
         status: 1,
-        data: result,
+        data: result[0],
         msg: ''
       })
     } else {

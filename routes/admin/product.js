@@ -29,6 +29,7 @@ router.post('/add', async (req, res, next) => {
   let time = tools.formatDateTime(new Date());
   istop = istop?1:0;
   status = status?1:0;
+  price = parseFloat(price).toFixed(2)
   recommend = recommend?1:0;
   let visits = 0
   let author = 'admin';
@@ -93,6 +94,7 @@ router.post('/edit', async (req, res, next) => {
   istop = istop?1:0;
   status = status?1:0;
   recommend = recommend?1:0;
+  price = parseFloat(price).toFixed(2)
   let sql = 'update product set title=?,pic=?,price=?,recommend=?,istop=?,status=?,time=?,content=?,catid=?,attr=?,groupImg=? where id=?';
     const result = await DB.query(sql, [title,pic,price,recommend,istop,status,time,content,catid,attr,groupImg,id]);
     if(result){
