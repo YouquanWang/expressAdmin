@@ -1,7 +1,18 @@
 ﻿const md5 = require('md5');
+const DB = require('./mysqlDB');
+const jwt = require('jsonwebtoken');
+const config = require('./config')
 let tools = {
     md5(str) {
         return md5(str)
+    },
+    getSign (json) {
+      let keys = Object.keys(json).sort();
+      let str = '';
+      for (var item of keys) {
+        str+= item + json[item]
+      }
+      return md5(str)
     },
     formatDateTime (date) {  
         var y = date.getFullYear();  
@@ -48,8 +59,29 @@ let tools = {
     },
    getToken(payload={}) {
 
-     return jwt.sign(payload, secret, { expiresIn: '2h' });
+     return jwt.sign(payload, config.secret, { expiresIn: '1h' });
 
+  },
+  getRandomSalt(){
+    return md5(Math.random().toString().slice(2, 5));
+  },
+  getSmsCode (mobile) {
+    return new Promise(async (reject, resolve)=>{
+        let sql = 'select * from sms where mobile=? order by time DESC';
+         try {
+            const result = await DB.query(sql,mobile);
+            if(result.length>0) {
+                reject({
+                  code: result[0].code,
+                  time: result[0].time
+                })
+            } else {
+                reject({})
+            }
+         } catch{
+            resolve('error')
+         }
+    })
   }
 }
 

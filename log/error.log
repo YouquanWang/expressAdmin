@@ -1,0 +1,14 @@
+2020-03-02T00:43:47.557Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T00:44:03.214Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T01:50:40.173Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T01:51:11.707Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T02:45:35.038Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T02:45:44.621Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T02:46:28.277Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:40:30.985Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:42:27.401Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:42:58.167Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:42:58.174Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:42:58.190Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-02T04:43:30.214Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-03T03:17:54.287Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''(23)'' at line 1

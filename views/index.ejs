@@ -7,5 +7,17 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <button onclick="send()"></button>
   </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+      var socket=io.connect();
+      socket.on("news", function (data) {
+          console.log(data);
+          // socket.emit("otherEvent",{my:"data"});
+      });
+      function send() {
+        socket.emit("otherEvent",{my:"data"});
+      }
+  </script>
 </html>

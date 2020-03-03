@@ -5,7 +5,7 @@ const url = require('url');
 const product = require('./admin/product')
 const category= require('./admin/category')
 const attribute= require('./admin/attribute')
-const DB = require('../model/mysqlDB');
+const common = require('../controller/common')
 const upload = require('../model/upload')
 const app = express();
 app.locals.__HOST__ = 'http://localhost:4000';
@@ -24,25 +24,8 @@ router.all('*',function (req,res,next){
 router.use('/product', product)
 router.use('/category', category)
 router.use('/attribute', attribute)
-router.post('/status',async (req, res, next) => {
-    let {id,statusName,status,dataBase} = req.body
-    let sql = `update ${dataBase} set ${statusName}=? where id=?`;
-    const result = await DB.query(sql, [status, id]);
-    if(result){
-        res.json({
-            status: 1,
-            data: [],
-            msg: '操作成功',
-            url: ''
-        })
-    } else {
-        res.json({
-            status: 0,
-            data: [],
-            msg: '操作失败',
-            url: ''
-        })
-    }
+router.post('/status', (req, res, next) => {
+  common.changeStatus(req, res, next)
 })
 router.post('/upload', upload.single('file'),(req,res,next) =>{
   let path = req.file.path
