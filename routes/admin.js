@@ -24,9 +24,7 @@ router.all('*',function (req,res,next){
 router.use('/product', product)
 router.use('/category', category)
 router.use('/attribute', attribute)
-router.post('/status', (req, res, next) => {
-  common.changeStatus(req, res, next)
-})
+router.post('/status', common.changeStatus)
 router.post('/upload', upload.single('file'),(req,res,next) =>{
   let path = req.file.path
   res.json({

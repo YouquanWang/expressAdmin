@@ -13,7 +13,5 @@ router.use('/login', login)
 router.use('/user', user)
 router.use('/address', address)
 router.use('/order', order)
-router.post('/sendSms', (req, res, next)=>{
-  common.sendSms(req, res, next)
-})
+router.post('/sendSms', common.sendSms)
 module.exports = router;

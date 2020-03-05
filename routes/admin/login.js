@@ -6,7 +6,5 @@ const app = express();
 router.get('/',(req, res, next) => {
     console.log(res)
 })
-router.post('/',(req,res,next) => {
-  loginModel.adminLogin(req,res,next)
-})
+router.post('/', loginModel.adminLogin)
 module.exports = router;

@@ -39,7 +39,7 @@ app.use(session({
    }
 }))
 app.use(express.static(path.join(__dirname, 'public')));
-var accessLogStream = fs.createWriteStream(path.join(__dirname, '/log/request.log'), { flags: 'a', encoding: 'utf8' }); // 记得要先把目录建好，不然会报错
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '/log/request.log'), { flags: 'a', encoding: 'utf8' }); // 记得要先把目录建好，不然会报错
 app.use(logger('combined', { stream: accessLogStream }))
 app.use(expressJWT({
   secret: secretOrPrivateKey   
@@ -106,5 +106,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;

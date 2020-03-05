@@ -12,3 +12,33 @@
 2020-03-02T04:42:58.190Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
 2020-03-02T04:43:30.214Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
 2020-03-03T03:17:54.287Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''(23)'' at line 1
+2020-03-04T04:33:06.440Z error: connect ETIMEDOUT
+2020-03-04T04:33:06.452Z error: connect ETIMEDOUT
+2020-03-04T04:34:01.423Z error: ER_EMPTY_QUERY: Query was empty
+2020-03-04T04:34:01.759Z error: ER_EMPTY_QUERY: Query was empty
+2020-03-04T04:34:22.222Z error: connect ETIMEDOUT
+2020-03-04T05:37:33.108Z error: connect ETIMEDOUT
+2020-03-04T05:37:37.130Z error: connect ETIMEDOUT
+2020-03-04T06:56:48.090Z error: connect ETIMEDOUT
+2020-03-04T07:07:31.913Z error: connect ETIMEDOUT
+2020-03-04T07:17:01.851Z error: connect ETIMEDOUT
+2020-03-04T07:55:24.522Z error: connect ETIMEDOUT
+2020-03-04T07:55:28.071Z error: connect ETIMEDOUT
+2020-03-04T07:58:29.942Z error: connect ETIMEDOUT
+2020-03-04T07:59:11.634Z error: connect ETIMEDOUT
+2020-03-04T08:56:53.989Z error: connect ETIMEDOUT
+2020-03-04T08:57:31.837Z error: connect ETIMEDOUT
+2020-03-04T08:57:35.916Z error: connect ETIMEDOUT
+2020-03-04T08:57:36.962Z error: connect ETIMEDOUT
+2020-03-04T09:12:57.285Z error: connect ETIMEDOUT
+2020-03-04T17:32:45.159Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order where status='' order by id DESC limit 0,8' at line 1
+2020-03-04T17:33:09.695Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order where status='' order by id DESC limit 0,8' at line 1
+2020-03-04T17:36:32.033Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order where status=0 order by id DESC limit 8,?' at line 1
+2020-03-04T17:37:23.923Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order order by id DESC limit 0,8' at line 1
+2020-03-04T17:38:36.358Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order limit 0,8 order by id DESC' at line 1
+2020-03-04T17:39:06.470Z error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order;select * from order limit 0,8' at line 1
+2020-03-05T05:28:41.350Z error: ER_EMPTY_QUERY: Query was empty
+2020-03-05T05:48:18.185Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-05T05:48:18.199Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-05T05:48:41.880Z error: getaddrinfo ENOTFOUND cdb-6blev1lu.bj.tencentcdb.com cdb-6blev1lu.bj.tencentcdb.com:10053
+2020-03-05T05:50:50.345Z error: ER_WRONG_VALUE_COUNT_ON_ROW: Column count doesn't match value count at row 1

@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userModel = require('../../controller/user')
 
-router.post('/info', (req, res, next) => {
-  userModel.getUserInfo(req, res, next)
-})
+router.post('/info', userModel.getUserInfo)
 
 module.exports = router;

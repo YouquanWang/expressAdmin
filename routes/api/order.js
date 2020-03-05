@@ -7,9 +7,7 @@ const API = require('wechat-api')
 const wechatPay = require('../../model/wechatPay')
 const api = new API(config.pay.wxappid,config.pay.wxappsecret)
 
-router.post('/create', (req, res, next) => {
-  orderModel.createOrder(req, res, next)
-})
+router.post('/create', orderModel.createOrder)
 router.post('/pay', async (req, res, next) => {
   let pay=new wechatPay();
   console.log(111)
@@ -35,7 +33,6 @@ res.json({
     msg: ''
 })
 })
-router.post('/preview', (req, res, next) => {
-  orderModel.orderPreview(req, res, next)  
-})
+router.post('/preview', orderModel.orderPreview)
+router.post('/list', orderModel.getList)
 module.exports = router;
